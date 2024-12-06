@@ -72,7 +72,7 @@ The slang dictionary is maintained in `src/data/slang.json`. To add a new slang:
 ### Development Guidelines
 
 1. The project uses:
-   - Next.js 14 with App Router
+   - Next.js 15 with App Router
    - TailwindCSS for styling
    - TypeScript for type safety
 
@@ -83,8 +83,8 @@ The slang dictionary is maintained in `src/data/slang.json`. To add a new slang:
 
 ## Feedback and Contributions
 
-- 🐛 Found a bug? [Open an issue](https://github.com/yourusername/genz-slang/issues)
-- 💡 Have a suggestion? [Create a pull request](https://github.com/yourusername/genz-slang/pulls)
+- 🐛 Found a bug? [Open an issue](https://github.com/krshubham/genz-slang/issues)
+- 💡 Have a suggestion? [Create a pull request](https://github.com/krshubham/genz-slang/pulls)
 - 📖 Know a slang we missed? Add it through:
   - A pull request following the guidelines above
   - Our [submission form](https://forms.gle/QNs6juDmg8rzxN2Z9)
