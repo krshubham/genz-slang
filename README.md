@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GenZ Slang Dictionary 🔥
 
-## Getting Started
+A modern web application that helps you understand and keep up with the latest GenZ slangs. Built with Next.js and TailwindCSS, featuring a beautiful dark theme UI with a dynamic search experience.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🔍 Real-time search with fuzzy matching
+- 🎯 Exact and closest match suggestions
+- 📱 Mobile-first responsive design
+- 🌙 Beautiful dark theme with gradient animations
+- 🔄 Trending slangs showcase
+- 📤 Easy sharing functionality
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This is a [Next.js](https://nextjs.org) project. To run it locally:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/genz-slang.git
+   cd genz-slang
+   ```
 
-## Learn More
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+### Adding New Slangs
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The slang dictionary is maintained in `src/data/slang.json`. To add a new slang:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Add your slang to the `slangs` array in `src/data/slang.json` following this format:
+   ```json
+   {
+     "term": "your_slang",
+     "meaning": "A clear and concise definition of the slang",
+     "examples": [
+       "Example usage in a sentence with **bold** slang term",
+       "Another example with the **slang** highlighted"
+     ]
+   }
+   ```
+   Note: Use markdown formatting in the meaning and examples. Wrap the slang term in `**bold**` in examples.
+
+3. Ensure your slang entry:
+   - Has a unique term (not already in the dictionary)
+   - Includes a clear, accurate meaning
+   - Provides at least two practical examples
+   - Uses proper markdown formatting
+
+4. Create a pull request with your changes
+
+### Development Guidelines
+
+1. The project uses:
+   - Next.js 14 with App Router
+   - TailwindCSS for styling
+   - TypeScript for type safety
+
+2. Before submitting a PR:
+   - Ensure your code follows the existing style
+   - Test your changes locally
+   - Update documentation if needed
+
+## Feedback and Contributions
+
+- 🐛 Found a bug? [Open an issue](https://github.com/yourusername/genz-slang/issues)
+- 💡 Have a suggestion? [Create a pull request](https://github.com/yourusername/genz-slang/pulls)
+- 📖 Know a slang we missed? Add it through:
+  - A pull request following the guidelines above
+  - Our [submission form](https://forms.gle/QNs6juDmg8rzxN2Z9)
+
+## License
+
+MIT License - feel free to use this project however you'd like!
