@@ -201,39 +201,41 @@ export default function Home() {
     meaning?: string;
     examples?: string[];
   } | null>(null);
+  const [matches, setMatches] = useState<(typeof slangData.slangs)[0][]>([]);
 
   useEffect(() => {
     if (searchTerm.trim() === "") {
       setClosestMatch(null);
       setResult(null);
+      setMatches([]);
       return;
     }
 
     const searchWords = searchTerm.toLowerCase().split(" ");
-    const matches = slangData.slangs.filter((slang) => {
+    const matchedSlangs = slangData.slangs.filter((slang) => {
       const slangWords = slang.term.toLowerCase().split(" ");
       return searchWords.every((word) =>
         slangWords.some((slangWord) => slangWord.includes(word))
       );
     });
 
-    if (matches.length > 0) {
-      // Find the best match based on exact match or closest length
-      const exactMatch = matches.find(
+    setMatches(matchedSlangs);
+
+    if (matchedSlangs.length > 0) {
+      const exactMatch = matchedSlangs.find(
         (slang) => slang.term.toLowerCase() === searchTerm.toLowerCase()
       );
       if (exactMatch) {
         setClosestMatch(exactMatch);
-        setResult(exactMatch);  // Immediately show exact match
+        setResult(exactMatch);
       } else {
-        // Sort by length difference to find closest match
-        const sortedMatches = [...matches].sort((a, b) => {
+        const sortedMatches = [...matchedSlangs].sort((a, b) => {
           const aDiff = Math.abs(a.term.length - searchTerm.length);
           const bDiff = Math.abs(b.term.length - searchTerm.length);
           return aDiff - bDiff;
         });
         setClosestMatch(sortedMatches[0]);
-        setResult(sortedMatches[0]);  // Immediately show closest match
+        setResult(sortedMatches[0]);
       }
     } else {
       setClosestMatch(null);
@@ -330,31 +332,56 @@ export default function Home() {
               </div>
 
               {result && (
-                <div className="mt-4 text-left bg-white/5 backdrop-blur-lg rounded-xl p-6 animate-fade-in border border-white/5">
-                  <div className="flex justify-between items-start mb-2">
-                    <h2 className="text-2xl font-bold text-white">
-                      {result.term}
-                    </h2>
-                    <button
-                      onClick={() => handleShare(result.term ?? '')}
-                      className="p-2 hover:bg-white/10 rounded-full transition-colors duration-200"
-                      title="Share this slang"
-                    >
-                      <LuShare2 className="w-5 h-5 text-white/70 hover:text-white" />
-                    </button>
+                <>
+                  <div className="mt-4 text-left bg-white/5 backdrop-blur-lg rounded-xl p-6 animate-fade-in border border-white/5">
+                    <div className="flex justify-between items-start mb-2">
+                      <h2 className="text-2xl font-bold text-white">
+                        {result.term}
+                      </h2>
+                      <button
+                        onClick={() => handleShare(result.term ?? '')}
+                        className="p-2 hover:bg-white/10 rounded-full transition-colors duration-200"
+                        title="Share this slang"
+                      >
+                        <LuShare2 className="w-5 h-5 text-white/70 hover:text-white" />
+                      </button>
+                    </div>
+                    <div className="text-lg mb-4">
+                      <MarkdownContent content={result.meaning ?? ''} />
+                    </div>
+                    <div className="space-y-2">
+                      <h3 className="text-white font-semibold">Examples:</h3>
+                      {result.examples?.map((example, i) => (
+                        <div key={i} className="text-white/80 italic">
+                          <MarkdownContent content={example} />
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="text-lg mb-4">
-                    <MarkdownContent content={result.meaning ?? ''} />
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="text-white font-semibold">Examples:</h3>
-                    {result.examples?.map((example, i) => (
-                      <div key={i} className="text-white/80 italic">
-                        <MarkdownContent content={example} />
+
+                  {/* Similar Slangs Pills */}
+                  {matches.length > 1 && (
+                    <div className="mt-4 mb-6 animate-fade-in">
+                      <h3 className="text-white/80 text-sm mb-2">Similar Slangs:</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {matches
+                          .filter(match => match.term !== result.term)
+                          .slice(0, 3)
+                          .map((match, index) => (
+                            <button
+                              key={index}
+                              onClick={() => handleSuggestionSelect(match.term)}
+                              className="px-3 py-1.5 bg-white/5 hover:bg-white/10 rounded-full text-sm text-white/90 
+                                        border border-white/10 transition-all duration-200 hover:border-white/20
+                                        backdrop-blur-sm"
+                            >
+                              {match.term}
+                            </button>
+                          ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    </div>
+                  )}
+                </>
               )}
 
               {searchTerm && !result && (
