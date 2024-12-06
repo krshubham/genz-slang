@@ -16,9 +16,9 @@ const MarkdownContent = ({ content }: { content: string }) => (
     components={{
       p: ({ children }) => <p className="text-white/90">{children}</p>,
       a: ({ href, children }) => (
-        <a 
-          href={href} 
-          target="_blank" 
+        <a
+          href={href}
+          target="_blank"
           rel="noopener noreferrer"
           className="text-blue-300 hover:text-blue-200 underline transition-colors"
         >
@@ -41,7 +41,7 @@ const SuggestionBox = ({ onSelect }: { onSelect: (term: string) => void }) => {
     const updateSuggestions = () => {
       const allTerms = [...slangData.slangs];
       const selectedTerms: (typeof slangData.slangs)[0][] = [];
-      
+
       // Get 4 random terms
       for (let i = 0; i < 4; i++) {
         if (allTerms.length === 0) break;
@@ -49,7 +49,7 @@ const SuggestionBox = ({ onSelect }: { onSelect: (term: string) => void }) => {
         selectedTerms.push(allTerms[randomIndex]);
         allTerms.splice(randomIndex, 1);
       }
-      
+
       setSuggestions(selectedTerms);
       setKey(prev => prev + 1); // Update key to restart animation
     };
@@ -96,13 +96,27 @@ const styles = `
   @keyframes progressSlider {
     from {
       transform: scaleX(0);
+      -webkit-transform: scaleX(0);
     }
     to {
       transform: scaleX(1);
+      -webkit-transform: scaleX(1);
     }
   }
 
   @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @-webkit-keyframes gradientFlow {
     0% {
       background-position: 0% 50%;
     }
@@ -126,33 +140,54 @@ const styles = `
       #1a1b26
     );
     background-size: 400% 400%;
+    -webkit-animation: gradientFlow 30s ease infinite;
     animation: gradientFlow 30s ease infinite;
   }
 
   .content-container {
     background: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.03),
-      rgba(255, 255, 255, 0.01)
+      rgba(26, 27, 38, 0.95),
+      rgba(26, 27, 38, 0.98)
     );
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
   }
 
-  /* Add a subtle noise texture overlay */
+  @supports not (backdrop-filter: blur(12px)) {
+    .content-container {
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 27, 38, 0.98),
+        rgba(26, 27, 38, 0.99)
+      );
+    }
+  }
+
   .noise-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.08;
+    opacity: 0.04;
     pointer-events: none;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
   }
 
-  /* Add a subtle glow effect to the heading */
   .glow-text {
     text-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+  }
+
+  /* Safari-specific styles */
+  @supports (-webkit-touch-callout: none) {
+    .content-container {
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 27, 38, 0.98),
+        rgba(26, 27, 38, 0.99)
+      );
+    }
   }
 `;
 
@@ -217,25 +252,55 @@ export default function Home() {
 
   const handleShare = async (term: string) => {
     const shareUrl = `${window.location.origin}${window.location.pathname}?term=${encodeURIComponent(term)}`;
+
     try {
-      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        if (navigator.share) {
-          await navigator.share({
-            title: 'GenZ Slang Dictionary',
-            text: `Check out the meaning of "${term}" in the GenZ Slang Dictionary!`,
-            url: shareUrl
-          });
-          toast.success('Shared successfully!');
-        } else {
-          throw new Error('Share not supported');
-        }
-      } else {
+      // Check if it's a mobile device
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      // Only use share sheet on mobile devices
+      if (isMobile && navigator.share) {
+        await navigator.share({
+          title: 'GenZ Slang Dictionary',
+          text: `Check out the meaning of "${term}" in the GenZ Slang Dictionary!`,
+          url: shareUrl
+        });
+        toast.success('Shared successfully!');
+        return;
+      }
+
+      // For desktop or if share API is not available, try clipboard API first
+      try {
         await navigator.clipboard.writeText(shareUrl);
         toast.success('Link copied to clipboard!');
+        return;
+      } catch (clipboardError) {
+        // If clipboard API fails, try execCommand
+        const textArea = document.createElement('textarea');
+        textArea.value = shareUrl;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+          const successful = document.execCommand('copy');
+          textArea.remove();
+          
+          if (successful) {
+            toast.success('Link copied to clipboard!');
+            return;
+          }
+          throw new Error('execCommand failed');
+        } catch (execCommandError) {
+          textArea.remove();
+          throw execCommandError;
+        }
       }
     } catch (error) {
       console.error('Error sharing:', error);
-      toast.error('Failed to share');
+      toast.error('Unable to share. Please try copying the URL manually.');
     }
   };
 
@@ -301,14 +366,14 @@ export default function Home() {
               <SuggestionBox onSelect={handleSuggestionSelect} />
             </div>
           </div>
-          
+
           {/* Footer */}
           <footer className="w-full py-8 px-4">
             <div className="max-w-2xl mx-auto flex flex-col items-center space-y-4">
               <div className="flex items-center justify-center space-x-4">
-                <a 
-                  href="https://forms.gle/QNs6juDmg8rzxN2Z9" 
-                  target="_blank" 
+                <a
+                  href="https://forms.gle/QNs6juDmg8rzxN2Z9"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/80 hover:text-white transition-colors flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-lg border border-white/10 hover:bg-white/10"
                 >
@@ -318,12 +383,12 @@ export default function Home() {
                   </svg>
                 </a>
               </div>
-              
+
               <div className="text-white/60 text-sm">
                 Made with ❤️ by{' '}
-                <a 
-                  href="https://linkedin.com/in/krshubham1708" 
-                  target="_blank" 
+                <a
+                  href="https://linkedin.com/in/krshubham1708"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/80 hover:text-white underline transition-colors"
                 >
