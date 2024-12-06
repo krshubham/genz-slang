@@ -1,0 +1,284 @@
+{
+  "slangs": [
+    {
+      "term": "based",
+      "meaning": "Originally meaning 'to be yourself and not care about how others view you', now used to indicate agreement, especially in political discussions",
+      "examples": ["That's a **based** opinion", "Your take on this is so **based**"]
+    },
+    {
+      "term": "brainrot",
+      "meaning": "The state of losing touch with the real world from consuming hyperstimulating or chronically online content",
+      "examples": ["TikTok gave me **brainrot**", "All these memes are pure **brainrot**"]
+    },
+    {
+      "term": "bussin",
+      "meaning": "Extremely good or excellent, especially used for food. Originated from African-American vernacular",
+      "examples": ["This pizza is **bussin**!", "The new restaurant's food is straight **bussin**"]
+    },
+    {
+      "term": "bet",
+      "meaning": "Agreement or affirmation",
+      "examples": ["Are you coming to the party? – **Bet**!", "**Bet**, I'll see you there at 8"]
+    },
+    {
+      "term": "cap",
+      "meaning": "To lie or be dishonest",
+      "examples": ["He said he's rich, but that's **cap**", "Stop **capping** about where you were last night"]
+    },
+    {
+      "term": "caught in 4K",
+      "meaning": "Being indisputably caught doing something wrong, referencing high-definition 4K video quality",
+      "examples": ["You were **caught in 4K** lying about that", "Man got **caught in 4K** stealing from the store"]
+    },
+    {
+      "term": "delulu",
+      "meaning": "Short for delusional, someone who holds unrealistic or overly idealistic beliefs",
+      "examples": ["You're so **delulu** if you think that'll happen", "I'm in my **delulu** era right now"]
+    },
+    {
+      "term": "era",
+      "meaning": "A period of interests or priorities in one's life",
+      "examples": ["I'm in my fitness **era**", "This is my villain **era**"]
+    },
+    {
+      "term": "fanum tax",
+      "meaning": "When someone takes a portion of your food without asking",
+      "examples": ["He took a **fanum tax** from my fries", "No **fanum tax** on my food please"]
+    },
+    {
+      "term": "fire",
+      "meaning": "Extremely impressive, good, or cool",
+      "examples": ["That new song is straight **fire**!", "Your outfit is **fire** today"]
+    },
+    {
+      "term": "hits different",
+      "meaning": "Something that's uniquely better in a particular context or situation",
+      "examples": ["Water at 3am **hits different**", "This song **hits different** after a breakup"]
+    },
+    {
+      "term": "iykyk",
+      "meaning": "Acronym for 'if you know, you know' - used for inside jokes or references",
+      "examples": ["That restaurant at 3am **iykyk**", "The way this app crashes... **iykyk**"]
+    },
+    {
+      "term": "living rent free",
+      "meaning": "When something or someone constantly occupies your thoughts without effort",
+      "examples": ["That song is **living rent free** in my head", "That embarrassing moment is **living rent free** in my mind"]
+    },
+    {
+      "term": "main character",
+      "meaning": "Someone who acts like they're the star of their own movie or wants to be the center of attention",
+      "examples": ["She's having her **main character** moment", "**Main character** energy when I walked in late with coffee"]
+    },
+    {
+      "term": "no cap",
+      "meaning": "The truth, without exaggeration",
+      "examples": ["I finished the whole pizza by myself, **no cap**", "**No cap**, this is the best movie I've seen"]
+    },
+    {
+      "term": "periodt",
+      "meaning": "Emphasis on a point being final",
+      "examples": ["That's the best movie of the year, **periodt**", "I'm not going to that party, **periodt**"]
+    },
+    {
+      "term": "rizz",
+      "meaning": "Charisma or the ability to attract a romantic partner through charm",
+      "examples": ["His **rizz** game is strong", "You got no **rizz** bro"]
+    },
+    {
+      "term": "skibidi",
+      "meaning": "A term popularized by the viral [Skibidi Toilet](https://en.wikipedia.org/wiki/Skibidi_Toilet) series. Often used in meme culture and online content.",
+      "examples": ["That video is giving **skibidi** vibes", "The new **skibidi** trend is everywhere"]
+    },
+    {
+      "term": "slay",
+      "meaning": "To do something exceptionally well or succeed impressively",
+      "examples": ["You really **slayed** that presentation!", "Queen, you're **slaying** today"]
+    },
+    {
+      "term": "touch grass",
+      "meaning": "A suggestion to go outside and reconnect with reality, usually told to someone who's been online too long",
+      "examples": ["You need to **touch grass**", "Bro, **touch grass** please"]
+    },
+    {
+      "term": "unalive",
+      "meaning": "A euphemism for death-related terms, used to avoid content moderation",
+      "examples": ["The character got **unalived** in the movie", "Don't **unalive** my character in the game"]
+    },
+    {
+      "term": "vibe",
+      "meaning": "The overall mood or atmosphere",
+      "examples": ["This place has such a chill **vibe**", "I'm not feeling the **vibe** here"]
+    },
+    {
+      "term": "ghost",
+      "meaning": "To suddenly stop communicating with someone",
+      "examples": ["She **ghosted** me after our last date", "Why did you **ghost** the group chat?"]
+    },
+    {
+      "term": "lowkey",
+      "meaning": "Something you want to subtly express",
+      "examples": ["I'm **lowkey** excited about the concert", "This restaurant is **lowkey** the best in town"]
+    },
+    {
+      "term": "highkey",
+      "meaning": "Something you want to loudly express",
+      "examples": ["I'm **highkey** obsessed with this new album", "**Highkey** want to skip work today"]
+    },
+    {
+      "term": "sus",
+      "meaning": "Suspicious or questionable",
+      "examples": ["That deal sounds kind of **sus** to me", "The way they're acting is **sus**"]
+    },
+    {
+      "term": "flex",
+      "meaning": "To show off",
+      "examples": ["He's always **flexing** his new shoes", "Weird **flex** but okay"]
+    },
+    {
+      "term": "bop",
+      "meaning": "As a verb: to dance casually to music, especially pop music. As a noun: a really good song that makes you want to dance or move. The term has evolved in Gen Z culture to describe any catchy or enjoyable song, regardless of genre.",
+      "examples": ["Everyone was **bopping** to the new Taylor Swift song", "This new Drake track is such a **bop**", "Just sitting in my room **bopping** to my favorite playlist"]
+    },
+    {
+      "term": "stan",
+      "meaning": "A dedicated fan of someone or something",
+      "examples": ["I **stan** her work ethic so much", "We're all **stanning** this new artist"]
+    },
+    {
+      "term": "W",
+      "meaning": "Win or success",
+      "examples": ["Getting that job was a big **W** for me", "That presentation was a **W**"]
+    },
+    {
+      "term": "L",
+      "meaning": "Loss or failure",
+      "examples": ["Missing that opportunity was such an **L**", "Taking the wrong bus was an **L**"]
+    },
+    {
+      "term": "simp",
+      "meaning": "Someone who does too much for someone they like",
+      "examples": ["He's **simping** hard for her with those gifts", "Stop **simping** and focus on yourself"]
+    },
+    {
+      "term": "drip",
+      "meaning": "Stylish or fashionable clothing/accessories",
+      "examples": ["Check out his **drip**; he's looking fresh", "The **drip** is immaculate today"]
+    },
+    {
+      "term": "yeet",
+      "meaning": "To throw something with force",
+      "examples": ["He **yeeted** the ball across the field", "Just **yeet** it in the trash"]
+    },
+    {
+      "term": "lit",
+      "meaning": "Something exciting or excellent",
+      "examples": ["The party last night was **lit**!", "This game is absolutely **lit**"]
+    },
+    {
+      "term": "receipts",
+      "meaning": "Evidence or proof of something",
+      "examples": ["I have **receipts** to prove what happened", "Show me the **receipts** or it didn't happen"]
+    },
+    {
+      "term": "tea",
+      "meaning": "Gossip or juicy information",
+      "examples": ["Spill the **tea** on what happened last night", "This **tea** is piping hot"]
+    },
+    {
+      "term": "snack",
+      "meaning": "Someone who is attractive",
+      "examples": ["He's looking like a **snack** in that outfit", "You're not just a **snack**, you're the whole meal"]
+    },
+    {
+      "term": "big yikes",
+      "meaning": "Something that's very embarrassing",
+      "examples": ["That awkward fall was a **big yikes**", "**Big yikes** to that failed presentation"]
+    },
+    {
+      "term": "shook",
+      "meaning": "Being shocked or surprised",
+      "examples": ["I'm **shook** by that plot twist!", "That news has me **shook**"]
+    },
+    {
+      "term": "boujee",
+      "meaning": "Luxurious or high-class",
+      "examples": ["She's always acting **boujee** with her designer bags", "This restaurant is too **boujee** for me"]
+    },
+    {
+      "term": "extra",
+      "meaning": "Over the top or excessive behaviour",
+      "examples": ["Her birthday party decorations were so **extra**", "You're being **extra** about this whole situation"]
+    },
+    {
+      "term": "gucci",
+      "meaning": "Everything is good or cool",
+      "examples": ["I'm feeling **gucci** about the project", "We're **gucci**, no worries"]
+    },
+    {
+      "term": "salty",
+      "meaning": "Bitter or upset over something minor",
+      "examples": ["He's **salty** because he lost the game", "Don't be **salty** just because I got the promotion"]
+    },
+    {
+      "term": "clout",
+      "meaning": "Influence or fame, especially on social media",
+      "examples": ["People are always chasing **clout** on Instagram", "He's just doing it for the **clout**"]
+    },
+    {
+      "term": "yap",
+      "meaning": "To talk excessively or ramble about unimportant things. Popularized on TikTok in 2023. Someone who talks too much is called a \"yapper\".",
+      "examples": ["She just keeps **yapping** about her weekend plans", "Bro is such a **yapper**, I can't get any work done"]
+    },
+    {
+      "term": "put the fries in the bag",
+      "meaning": "A phrase used to tell someone to stop talking unnecessarily and just do what they're supposed to do. Originated from fast-food experiences where workers would talk too much instead of completing the order.",
+      "examples": ["He kept talking about his gaming setup during the meeting and I had to tell him to **put the fries in the bag**", "Just **put the fries in the bag**, we don't need your life story"]
+    },
+    {
+      "term": "hawk tuah",
+      "meaning": "An [onomatopoeia](https://en.wikipedia.org/wiki/Onomatopoeia) that went viral from a [2024 YouTube street interview](https://en.wikipedia.org/wiki/Hawk_tuah). Often used as a sound effect or reaction in social media content.",
+      "examples": ["The comments are just filled with **hawk tuah**", "Everyone keeps commenting **hawk tuah** on their videos"]
+    },
+    {
+      "term": "aura",
+      "meaning": "While traditionally meaning the energy or atmosphere someone exudes, Gen Z uses this term to describe someone's coolness, perceived power, or sense of mystery. Often used to compliment someone's overall vibe or presence.",
+      "examples": ["She's got that main character **aura**", "The way he handled that situation... his **aura** is immaculate"]
+    },
+    {
+      "term": "let him cook",
+      "meaning": "A phrase used to encourage allowing someone to continue what they're doing without interruption, especially when they're in their element or showing potential. Often used in sports and creative contexts to mean 'don't interrupt' or 'let them do their thing'.",
+      "examples": ["The rookie's on fire, just **let him cook**", "When he started his weird dance moves, everyone was laughing, but I said '**let him cook**' and he won the competition"]
+    },
+    {
+      "term": "got cooked",
+      "meaning": "To be defeated or embarrassed, especially in a competitive setting. Often implies the defeat was particularly brutal or humiliating. Commonly used in sports contexts.",
+      "examples": ["He tried to guard the star player one-on-one and **got cooked**", "That debate team **got cooked** in the finals, it wasn't even close"]
+    },
+    {
+      "term": "is cooked",
+      "meaning": "A state where someone has lost their former abilities or can no longer perform at their previous level. Often used to describe athletes or competitors who are past their prime.",
+      "examples": ["That player **is cooked**, he's not the same since his injury", "The champion **is cooked**, it's time for him to retire"]
+    },
+    {
+      "term": "locked in",
+      "meaning": "A state of complete focus and dedication to a task or goal. For Gen Z, it represents more than just commitment—it's about channeling all your energy, attention, and effort into something important, often with an almost meditative level of concentration.",
+      "examples": ["I'm **locked in** this weekend to finish my portfolio", "He's been **locked in** at the gym for months and the results are showing", "Can't hang out tonight, need to stay **locked in** on this project deadline"]
+    },
+    {
+      "term": "chat is this real?",
+      "meaning": "A phrase expressing extreme disbelief or being dumbfounded by something unexpected or hard to believe. Often used in online spaces or social media when witnessing something particularly shocking or surprising. The 'chat' refers to the audience or community being addressed.",
+      "examples": ["When the underdog team scored in the last second: '**chat is this real**??'", "Seeing their favorite artist show up at a small venue: '**chat is this real** right now?'", "After witnessing an impossible play in a game: 'Bro **chat is this real**, did that just happen?'"]
+    },
+    {
+      "term": "NPC",
+      "meaning": "Short for 'Non-Player Character' from video games, used metaphorically to describe someone who seems to lack independent thought or agency. It suggests someone who blindly follows trends, repeats common phrases without understanding them, or behaves in a predictable, programmed way like background characters in a game.",
+      "examples": ["She just repeats whatever is trending on TikTok, total **NPC** behavior", "The way they all dress exactly the same and say the same phrases, they're like **NPCs**", "Stop being an **NPC** and think for yourself"]
+    },
+    {
+      "term": "OK boomer",
+      "meaning": "A dismissive phrase used to mock or reject outdated attitudes typically associated with the baby boomer generation (people born between 1946-1964). The phrase became a popular [internet meme](https://en.wikipedia.org/wiki/OK_boomer) representing younger generations' frustration with perceived condescension and resistance to change from older generations.",
+      "examples": ["When he complained about kids always being on their phones, I just replied '**OK boomer**'", "He gave a lecture about how we're too sensitive these days and everyone just typed '**OK boomer**' in the comments", "Their response to climate change concerns was met with collective '**OK boomer**' reactions"]
+    }
+  ]
+}
