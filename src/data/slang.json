@@ -161,11 +161,6 @@
       "examples": ["He's **simping** hard for her with those gifts", "Stop **simping** and focus on yourself"]
     },
     {
-      "term": "drip",
-      "meaning": "Stylish or fashionable clothing/accessories",
-      "examples": ["Check out his **drip**; he's looking fresh", "The **drip** is immaculate today"]
-    },
-    {
       "term": "yeet",
       "meaning": "To throw something with force",
       "examples": ["He **yeeted** the ball across the field", "Just **yeet** it in the trash"]
@@ -317,7 +312,7 @@
       ]
     },
     {
-      "term": "Drip",
+      "term": "drip",
       "meaning": "Fashionable, extremely stylish, or trendy appearance, particularly in clothing and accessories. Someone with 'drip' has great style.",
       "examples": [
         "His new outfit is pure **drip**",
@@ -338,6 +333,16 @@
       "term": "slaps",
       "meaning": "Something that is exceptionally good or amazing, often used to describe music that has a strong impact or makes you want to move or dance",
       "examples": ["Rihanna's new single **slaps** so hard, I can't stop listening to it!", "This beat **slaps**", "The DJ's playlist **slaps** tonight"]
+    },
+    {
+      "term": "pookie",
+      "meaning": "A term of endearment or nickname used to describe someone or something cute or adorable",
+      "examples": ["You're my **Pookie**!", "Look at that **Pookie** little puppy"]
+    },
+    {
+      "term": "it's giving",
+      "meaning": "A slang term used to describe a person, thing, or situation in a positive or ironic way, indicating that something meets or exceeds expectations",
+      "examples": ["**It's giving** professional chef with that amazing dinner", "**It's giving** fashionista vibes with that outfit", "**It's giving** rockstar energy"]
     }
   ]
 }
