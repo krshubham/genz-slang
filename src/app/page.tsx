@@ -211,9 +211,19 @@ export default function Home() {
       return;
     }
 
-    const searchWords = searchTerm.toLowerCase().split(" ");
+    // Normalize the search term: remove apostrophes and convert to lowercase
+    const normalizedSearchTerm = searchTerm.toLowerCase().replace(/[']/g, '');
+    
+    // Filter slangs based on normalized terms
     const matchedSlangs = slangData.slangs.filter((slang) => {
-      const slangWords = slang.term.toLowerCase().split(" ");
+      // Normalize the slang term
+      const normalizedSlangTerm = slang.term.toLowerCase().replace(/[']/g, '');
+      
+      // Split into words and filter out empty strings
+      const searchWords = normalizedSearchTerm.split(/\s+/).filter(Boolean);
+      const slangWords = normalizedSlangTerm.split(/\s+/).filter(Boolean);
+      
+      // Check if all search words are included in any of the slang words
       return searchWords.every((word) =>
         slangWords.some((slangWord) => slangWord.includes(word))
       );
@@ -222,18 +232,29 @@ export default function Home() {
     setMatches(matchedSlangs);
 
     if (matchedSlangs.length > 0) {
+      // Check for exact match (ignoring case and apostrophes)
       const exactMatch = matchedSlangs.find(
-        (slang) => slang.term.toLowerCase() === searchTerm.toLowerCase()
+        (slang) => slang.term.toLowerCase().replace(/[']/g, '') === normalizedSearchTerm
       );
+      
       if (exactMatch) {
         setClosestMatch(exactMatch);
         setResult(exactMatch);
       } else {
+        // Sort matches by similarity
         const sortedMatches = [...matchedSlangs].sort((a, b) => {
-          const aDiff = Math.abs(a.term.length - searchTerm.length);
-          const bDiff = Math.abs(b.term.length - searchTerm.length);
+          const aDiff = Math.abs(a.term.toLowerCase().replace(/[']/g, '').length - normalizedSearchTerm.length);
+          const bDiff = Math.abs(b.term.toLowerCase().replace(/[']/g, '').length - normalizedSearchTerm.length);
+          if (aDiff === bDiff) {
+            // If lengths are equal, prioritize terms that start with the search term
+            const aStartsWith = a.term.toLowerCase().replace(/[']/g, '').startsWith(normalizedSearchTerm);
+            const bStartsWith = b.term.toLowerCase().replace(/[']/g, '').startsWith(normalizedSearchTerm);
+            if (aStartsWith && !bStartsWith) return -1;
+            if (!aStartsWith && bStartsWith) return 1;
+          }
           return aDiff - bDiff;
         });
+        
         setClosestMatch(sortedMatches[0]);
         setResult(sortedMatches[0]);
       }
