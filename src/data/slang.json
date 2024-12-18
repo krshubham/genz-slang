@@ -348,6 +348,16 @@
       "term": "no sweat",
       "meaning": "Used to indicate that something is easy or not a problem; a casual way of saying 'no problem' or 'don't worry about it'",
       "examples": ["Can you help me with this? - **No sweat**, I got you", "Thanks for the help! - **No sweat**, anytime!"]
+    },
+    {
+      "term": "situationship",
+      "meaning": "A romantic or sexual relationship that is undefined or uncommitted. It's more than just hooking up but less than a formal relationship",
+      "examples": ["We've been in a **situationship** for months now", "I can't tell if we're dating or if this is just a **situationship**"]
+    },
+    {
+      "term": "IRL",
+      "meaning": "Acronym for 'In Real Life', used to distinguish between online and physical world experiences or interactions",
+      "examples": ["We're finally meeting **IRL** after talking online for months", "The concert was so much better **IRL** than on livestream"]
     }
   ]
 }
