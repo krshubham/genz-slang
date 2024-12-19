@@ -358,6 +358,11 @@
       "term": "IRL",
       "meaning": "Acronym for 'In Real Life', used to distinguish between online and physical world experiences or interactions",
       "examples": ["We're finally meeting **IRL** after talking online for months", "The concert was so much better **IRL** than on livestream"]
+    },
+    {
+      "term": "dropped the ball",
+      "meaning": "Make an error; miss an opportunity. This expression comes from sports where a player who fails to catch a ball is charged with an error.",
+      "examples": ["She really **dropped the ball** when she forgot to call back", "He **dropped the ball**, turning down their offer"]
     }
   ]
 }
